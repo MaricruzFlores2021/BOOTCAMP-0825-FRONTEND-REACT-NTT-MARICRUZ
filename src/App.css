@@ -1,0 +1,92 @@
+/*HEADER*/
+header {
+  background: #f8f4f4;
+  border-bottom: 1px solid #0f0202;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  gap: 12px;
+  color:#0f0202;
+}
+
+header nav a{
+  color:rgb(8, 8, 8);
+}
+header nav button {
+  color:rgb(238, 236, 236);
+  font-size: 0.95rem;
+}
+
+/*PRODUCTOS*/
+.card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  color:#131313;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1rem;
+  margin: 4px 0;
+  text-align: center; 
+}
+
+.card p {
+  font-size: 0.9rem;
+  font-family: 'Comic Sans MS', sans-serif;
+  margin: 4px 0;
+  text-align: justify;
+}
+
+/*FORMULARIOS*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-weight: 500;
+}
+
+form input,
+form select {
+  width: 100%;
+}
+
+/*CONTENEDORES*/
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*UTILIDADES*/
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-16 {
+  gap: 16px;
+}
