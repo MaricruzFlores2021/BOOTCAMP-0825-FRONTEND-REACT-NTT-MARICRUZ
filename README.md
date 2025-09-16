@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+Tienda Virtual 
+Proyecto de tienda online desarrollado con React, TypeScript y Vite. Permite la visualización de productos, búsqueda y filtrado, gestión de carrito de compras, autenticación simulada, y procesamiento de órdenes a través de un formulario validado.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Características
+•	Listado paginado de productos con búsqueda y filtrado.
+•	Gestión global del estado con Context API.
+•	Carrito de compras con operaciones de agregar, eliminar y modificar cantidades.
+•	Autenticación simulada con login/logout y protección de rutas.
+•	Formulario de compra con validaciones y selección de distritos.
+•	Consumo de API externa (https://dummyjson.com).
 
-Currently, two official plugins are available:
+Estructura del proyecto
+src/
+├── components/         # Componentes reutilizables (Header, ProductCard)
+├── context/            # Contextos globales (Auth, Cart, Products)
+├── hooks/              # Hooks personalizados (usePagination useDistricts,useProducts)
+├── pages/              # Vistas (Home, Login, Summary)
+├── routes/             # Rutas (withAuth)
+├── services/           # API (apiFetch)
+├── styles/             # Estilos CSS globales
+├── types/              # Definiciones TypeScript
+├── utils/              # Mappers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Estado y flujo
+•	Los productos se cargan desde la API y se almacenan en ProductsContext.
+•	El carrito utiliza CartContext y un useReducer para manejar la lógica de agregar/remover.
+•	La autenticación se gestiona con AuthContext, controlando acceso mediante withAuth.
+•	El formulario de checkout utiliza React Hook Form para validaciones avanzadas.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Instalación y ejecución
+1.	Clona el repositorio:
+2.	git clone 
+3.	cd tienda-react
+4.	npm run dev
